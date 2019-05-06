@@ -1,0 +1,307 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("pattern3.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper{
+    margin: auto;
+    width: 1200px;
+    height: auto;
+    background-color: #EBEDEF;
+    border: 3px;
+    padding: 30px;
+    display: block;
+}
+
+
+h1 {
+    color: #212F3D;
+    text-align: center;
+    font-weight: bold;
+    font-family: Caladea;
+    font-size: 48px;    
+    
+}
+
+h2 {
+    
+    color: #212F3D;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Caladea;
+}
+
+.h3 {
+    
+    color: #212F3D;
+    font-weight: bold;
+    font-size: 26px;
+    font-family: Caladea;
+    }
+    
+h5 {
+    
+    color: #212F3D;
+    font-size: 16px;
+    font-family: Caladea;
+
+    }
+p {
+    font-family: Caladea;
+    font-size: 20px;
+    color: #212F3D;
+}
+
+
+.navbar {
+    overflow: hidden;
+    background-color: #F2F3F4;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+}
+
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #FAE5D3;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+.navbar a:hover {
+    background: #F2F3F4;
+    color: #273746;
+}
+
+
+.main {
+    margin-top: 30px;
+}
+
+.happy {
+    font-family: Algerian;
+    color: #2471A3;
+    
+}
+
+.centera {
+    text-align:center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+    height: 500px;
+    padding-top: 2em;
+}
+.center {
+    text-align:center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    padding-top: 2em;
+}
+.pcenter {
+    text-align:center;
+    font-family: Caladea;
+    font-size: 20px;
+    color: #212F3D;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    background-color: #2471A3;
+    border: none;
+    color: white;
+    font-family: Caladea;
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 60px;
+    margin-bottom: 2px;
+}
+
+
+textarea {
+    width: 300px;
+    height: 80px;
+    background-color: #fff;
+    resize: none;
+    font-family:Caladea;
+    font-size:14pt;
+    color:#000000;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+
+.comment-box {
+  
+    margin-top: 5px;
+    background-color: #cadbf1;
+    border-radius: 2px;
+    border-bottom-style: outset;
+    padding: 10px;
+    width: 600px;
+    text-align:center;
+    box-sizing: border-box;
+    margin: 10px auto 5px auto;	
+}
+
+.comment-box p{
+    font-family: Caladea;
+    font-size: 14px;
+    line-height: 16px;
+    color: #282828;
+    font-weight: 100;
+    padding-bottom: 2px;
+}
+.w3-tag{
+    background-color:#2471A3!important;
+    color:#fff;
+    display:inline-block;
+    padding-left:8px;
+    padding-right:8px;
+    text-align:center;
+    
+}
+
+.header-login form input {
+  height: 100%;
+  width: 160px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 4px;
+  float: left;
+  margin-left: 8px;
+  font-family: Caladea;
+  color: #212F3D;
+}
+
+.header-login form button {
+  height: 100%;
+  padding: 0 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  margin-left: 8px;
+  font-family: Caladea;
+  font-size: 13px;
+  color: #212F3D;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.header-signup {
+  height: 100%;
+  width: 70px;
+  padding: 0 6px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 8px;
+  font-family: Caladea;
+  font-size: 13px;
+  line-height: 36px;
+  color: #212F3D;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+.section-default {
+  width: 100%;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.login-status {
+  text-align: center;
+  font-size: 26px;
+  font-family: Caladea;
+  color: #111;
+}
+
+.form-signup {
+  margin-bottom: 10px;
+  margin-top: 50px;
+  border: 6px;
+  border-radius: 4px;
+  background-color: #F6F6F6;
+  float: left;
+  font-family: Caladea;
+  text-align:center;
+  font-family: Caladea;
+  font-size: 20px;
+  color: #212F3D;
+  padding-left: 100px;
+  padding-right: 70px;
+
+}
+
+.form-signup button {
+  width: 100px;
+  height: 40px;
+  background-color: #2471A3;
+  border: none;
+  color: white;
+  font-family: Caladea;
+  font-weight: 400;
+  cursor: pointer;
+  margin-bottom: 60px;
+  margin-top: 15px;
+}
+.signuperror {
+  padding-top: 14px;
+  font-family: Caladea;
+  font-size: 16px;
+  color: red;
+  text-align: center;
+}
+
+.signupsuccess {
+  padding-top: 14px;
+  font-family: Caladea;
+  font-size: 16px;
+  color: green;
+  text-align: center;
+}
+
+input { padding: 12px 20px;
+        box-sizing: border-box;
+        width: 30%;
+        border-radius: 4px;
+        margin-right: auto;
+        margin-left: auto   
+         
+}
+label { float: left;
+	width: 10em;
+	padding-right: 1em;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin: auto;
+        text-align:center;
+}
+#submit { 
+          background-color: #2471A3;
+          display: block;
+          width: 200px;
+         }
+
