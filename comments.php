@@ -47,14 +47,54 @@ function editComments($conn) {
 }
   
 
-function setContact($conn) {
+function setContact($conn)
+{
     if (isset ($_POST['submit'])) {
-              
-        $sql = "INSERT INTO contact (Name, Last_Name, Email) VALUES ('".($_POST['FName'])."', '".($_POST['LastName'])."', '".($_POST['UEmail'])."')";
+
+        $sql = "INSERT INTO contact (Name, Last_Name, Email) VALUES ('" . ($_POST['FName']) . "', '" . ($_POST['LastName']) . "', '" . ($_POST['UEmail']) . "')";
         $result = mysqli_query($conn, $sql);
-        
+
     }
 }
+
+function getLogin($conn) {
+    if(isset($_POST['loginSubmit'])){
+        $user_id = $_POST['user_id'];
+        $pwd = $_POST['password'];
+
+        $sql = "SELECT * FROM users WHERE user_id='$user_id' AND password='$pwd'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) == 1){
+
+            if ($row = $result->fetch_assoc()){
+                $_SESSION['id'] = $row['id'];
+                header("Location: posts.php?loggedin");
+                exit();
+            }
+        }else{
+            header("Location: posts.php");
+            exit();
+
+        }
+
+    }
+}
+
+function uLogout($conn) {
+    if(isset($_POST['logoutSubmit'])){
+        session_start();
+        session_destroy();
+        header("Location: posts.php?loggedout");
+        exit();
+    }
+
+}
+
+
+
+
+
+
 
 
     

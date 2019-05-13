@@ -2,13 +2,14 @@
 //Working on signup and login
 if (isset($_POST['signup-submit'])) {
 
-  
+
   require 'dbh.inc.php';
 
 
-         
-        $sql = "INSERT INTO users (first, last, uidUsers, emailUser, pwdUsers) VALUES ('".($_POST['firstname'])."', '".($_POST['lastname'])."', '".($_POST['username'])."',
-                '".($_POST['email'])."', '".($_POST['hashedPwd'])."')";
+  
+
+        $sql = "INSERT INTO users (first, last, uidUser, emailUser, pwdUser) VALUES ('".($_POST['first'])."', '".($_POST['last'])."', '".($_POST['uid'])."',
+                '".($_POST['mail'])."', '".($_POST['pwd'])."')";
         
         
          mysqli_query($conn, $sql);

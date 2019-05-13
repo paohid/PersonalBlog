@@ -114,12 +114,14 @@ p {
     margin-right: auto;
     width: 450px;
     padding-top: 2em;
+    padding-bottom: 2em;
 }
 .pcenter {
     text-align:center;
     font-family: Caladea;
     font-size: 20px;
     color: #212F3D;
+    padding: 0 10px 0 10px;
 }
 
 button {
@@ -228,6 +230,9 @@ textarea {
   padding: 20px;
   border-radius: 6px;
   text-align: center;
+  margin-bottom: 50px;
+    margin-top: 50px;
+    padding-top: 10px;
 }
 
 .login-status {
@@ -251,10 +256,11 @@ textarea {
   color: #212F3D;
   padding-left: 100px;
   padding-right: 70px;
+  margin-bottom: 5px;
 
 }
 
-.form-signup button {
+.form-signupbutton {
   width: 100px;
   height: 40px;
   background-color: #2471A3;

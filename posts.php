@@ -12,10 +12,40 @@
 
 ?>
 
-<?php
- if (isset($_SESSION['user_id']))
- echo "You are logged in";
-?>
+
+<main>
+      <div>
+        <section class="section-default">
+
+          <?php
+          if (!isset($_SESSION['id'])) {
+            echo '<p class="login-status">Login to Comment</p>';
+          }
+          else if (isset($_SESSION['id'])) {
+            echo '<p class="login-status">You are logged in!</p>';
+          }
+
+
+
+
+        if (!isset($_SESSION['id'])) {
+          echo '<form action="includes/login.inc.php" method="POST">
+            <input type="text" name="emailUser" placeholder="E-mail/Username">
+            <input type="password" name="pwd" placeholder="Password">
+            <button type="submit" name="login-submit">Login</button>
+          </form>
+          <a href="signup.php">Signup</a>';
+        }
+        else if (isset($_SESSION['id'])) {
+          echo '<form action="includes/logout.inc.php" method="POST">
+            <button type="submit" name="login-submit">Logout</button>
+          </form>';
+        }
+          ?>
+        </section>
+      </div>
+    </main>
+
 
     
     
@@ -57,26 +87,13 @@
    
       <div class="wrapper-main">
       <section class="section-default">
-        
-
-          
-       
-  
-   
-   
-   <!--login section-->  
-   <?php
-     
-   //Currently working on the log in seesssion
-   ?>
-   
 
    
      
 <!--comment section-->
 <?php
 echo "<form method='POST' action='".setComments($conn)."'>
-        <input type='hidden' name='user_id'>
+        <input type='hidden' name='user'>
         <input type='hidden' name='posted' value='".date('Y-m-d H:i:s')."'>
         Comments: <textarea rows = '5' cols = '15' name='body'></textarea><br><br>
         <button name='commentSubmit' type='submit'>Comment</button>

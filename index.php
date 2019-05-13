@@ -1,11 +1,13 @@
 <?php
 echo "<div class='wrapper'>";
-if (isset($_SESSION['id'])) {
-            echo '<p> You are logged in!</p>';
-          }
+
 
 require ('header.php');
 
+?>
+
+
+<?php
 echo "<br>";
 echo "<p style='color:black; border:4px  #2874A6 solid; text-align:center; font-family:Caladea; font-weight:bold; color:black;'>***************</p>";
 ?>
