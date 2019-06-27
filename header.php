@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ('db_connect2.php');
-require "includes/dbh.inc.php";
+require "includes/dbh.php";
 include ('comments.php');
 error_reporting(E_ALL);
 ini_set('display_errors', 1); 

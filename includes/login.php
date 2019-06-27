@@ -1,12 +1,13 @@
 <?php
-/
+
 if (isset($_POST['login-submit'])) {
 
 
-    require 'dbh.inc.php';
+    require 'dbh.php';
 
 
-    $mailuid = $_POST['mail'];
+
+    $mailuid = $_POST['mailuid'];
     $password = $_POST['pwd'];
 
 
@@ -17,7 +18,7 @@ if (isset($_POST['login-submit'])) {
     else {
 
 
-        $sql = "SELECT * FROM users WHERE uidUser=? OR emailUser=?;";
+        $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?;";
 
         $stmt = mysqli_stmt_init($conn);
 
@@ -29,6 +30,7 @@ if (isset($_POST['login-submit'])) {
         else {
 
 
+
             mysqli_stmt_bind_param($stmt, "ss", $mailuid, $mailuid);
 
             mysqli_stmt_execute($stmt);
@@ -37,7 +39,7 @@ if (isset($_POST['login-submit'])) {
 
             if ($row = mysqli_fetch_assoc($result)) {
 
-                $pwdCheck = password_verify($password, $row['pwdUser']);
+                $pwdCheck = password_verify($password, $row['pwdUsers']);
 
                 if ($pwdCheck == false) {
 
@@ -50,10 +52,10 @@ if (isset($_POST['login-submit'])) {
 
                     session_start();
 
-                    $_SESSION['id'] = $row['uidUser'];
-                    $_SESSION['uid'] = $row['uidUser'];
-                    $_SESSION['email'] = $row['emailUser'];
-                    // Now the user is registered as logged in and we can now take them back to the front page! :)
+                    $_SESSION['id'] = $row['id'];
+                    $_SESSION['uid'] = $row['uidUsers'];
+                    $_SESSION['email'] = $row['emailUsers'];
+
                     header("Location: ../posts.php?login=success");
                     exit();
                 }

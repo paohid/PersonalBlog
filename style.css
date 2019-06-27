@@ -10,6 +10,7 @@ body {
 * {
   margin: 0;
   padding: 0;
+  font-family: Caladea, sans-serif;
 }
 
 .wrapper{
@@ -27,8 +28,7 @@ h1 {
     color: #212F3D;
     text-align: center;
     font-weight: bold;
-    font-family: Caladea;
-    font-size: 48px;    
+    font-size: 48px;
     
 }
 
@@ -38,7 +38,7 @@ h2 {
     text-align: center;
     font-weight: bold;
     font-style: italic;
-    font-family: Caladea;
+
 }
 
 .h3 {
@@ -46,21 +46,26 @@ h2 {
     color: #212F3D;
     font-weight: bold;
     font-size: 26px;
-    font-family: Caladea;
+
     }
     
 h5 {
     
     color: #212F3D;
     font-size: 16px;
-    font-family: Caladea;
+
 
     }
 p {
-    font-family: Caladea;
+
     font-size: 20px;
     color: #212F3D;
+    padding: 0 10px 0 10px
+    letter-spacing: 2px;
+    line-height: 30pt;
+    text-align: center;
 }
+
 
 
 .navbar {
@@ -92,6 +97,17 @@ p {
     margin-top: 30px;
 }
 
+
+
+.star {
+
+
+    color:black;
+    border:4px  #2874A6 solid;
+    text-align:center;
+
+    font-weight:bold;
+}
 .happy {
     font-family: Algerian;
     color: #2471A3;
@@ -116,13 +132,16 @@ p {
     padding-top: 2em;
     padding-bottom: 2em;
 }
+
+
+
+
 .pcenter {
     text-align:center;
-    font-family: Caladea;
     font-size: 20px;
     color: #212F3D;
-    padding: 0 10px 0 10px;
-}
+    padding: 0 10px 0 10px
+   }
 
 button {
     width: 100px;
@@ -130,11 +149,10 @@ button {
     background-color: #2471A3;
     border: none;
     color: white;
-    font-family: Caladea;
     font-weight: 400;
     cursor: pointer;
     margin-bottom: 60px;
-    margin-bottom: 2px;
+
 }
 
 
@@ -143,7 +161,6 @@ textarea {
     height: 80px;
     background-color: #fff;
     resize: none;
-    font-family:Caladea;
     font-size:14pt;
     color:#000000;
     margin-left: auto;
@@ -154,7 +171,6 @@ textarea {
 
 .comment-box {
   
-    margin-top: 5px;
     background-color: #cadbf1;
     border-radius: 2px;
     border-bottom-style: outset;
@@ -166,7 +182,6 @@ textarea {
 }
 
 .comment-box p{
-    font-family: Caladea;
     font-size: 14px;
     line-height: 16px;
     color: #282828;
@@ -191,8 +206,7 @@ textarea {
   border-radius: 4px;
   float: left;
   margin-left: 8px;
-  font-family: Caladea;
-  color: #212F3D;
+    color: #212F3D;
 }
 
 .header-login form button {
@@ -202,7 +216,6 @@ textarea {
   border-radius: 4px;
   background-color: #333;
   margin-left: 8px;
-  font-family: Caladea;
   font-size: 13px;
   color: #212F3D;
   text-transform: uppercase;
@@ -216,7 +229,6 @@ textarea {
   border: none;
   border-radius: 4px;
   margin-left: 8px;
-  font-family: Caladea;
   font-size: 13px;
   line-height: 36px;
   color: #212F3D;
@@ -238,25 +250,21 @@ textarea {
 .login-status {
   text-align: center;
   font-size: 26px;
-  font-family: Caladea;
   color: #111;
 }
 
 .form-signup {
   margin-bottom: 10px;
   margin-top: 50px;
-  border: 6px;
+  border: 3px;
   border-radius: 4px;
-  background-color: #F6F6F6;
+  background-color: #EBEDEF;
   float: left;
-  font-family: Caladea;
   text-align:center;
-  font-family: Caladea;
   font-size: 20px;
   color: #212F3D;
-  padding-left: 100px;
-  padding-right: 70px;
-  margin-bottom: 5px;
+  padding:  5vw 5vw 5vw 10vw;
+    width: 900px; !important;
 
 }
 
@@ -266,7 +274,6 @@ textarea {
   background-color: #2471A3;
   border: none;
   color: white;
-  font-family: Caladea;
   font-weight: 400;
   cursor: pointer;
   margin-bottom: 60px;
@@ -274,7 +281,6 @@ textarea {
 }
 .signuperror {
   padding-top: 14px;
-  font-family: Caladea;
   font-size: 16px;
   color: red;
   text-align: center;
@@ -282,7 +288,6 @@ textarea {
 
 .signupsuccess {
   padding-top: 14px;
-  font-family: Caladea;
   font-size: 16px;
   color: green;
   text-align: center;
@@ -290,20 +295,20 @@ textarea {
 
 input { padding: 12px 20px;
         box-sizing: border-box;
-        width: 30%;
+        width: 50%;
         border-radius: 4px;
         margin-right: auto;
-        margin-left: auto   
+        margin-left: auto;
+
          
 }
 label { float: left;
 	width: 10em;
 	padding-right: 1em;
         display: block;
-        margin-right: auto;
-        margin-left: auto;
         margin: auto;
         text-align:center;
+    padding-top: 10px;
 }
 #submit { 
           background-color: #2471A3;
@@ -311,3 +316,14 @@ label { float: left;
           width: 200px;
          }
 
+.button {
+    width: 100px;
+    height: 40px;
+    background-color: #2471A3;
+    border: none;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
