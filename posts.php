@@ -4,7 +4,7 @@
     echo "<div class='wrapper'>";
     require ('header.php');
     include_once ('comments.php');
-    require ('includes/dbh.inc.php');
+    require ('includes/dbh.php');
     date_default_timezone_set('America/New_York');
     //session_start();
    
@@ -13,41 +13,11 @@
 ?>
 
 
-<main>
-      <div>
-        <section class="section-default">
-
-          <?php
-          if (!isset($_SESSION['id'])) {
-            echo '<p class="login-status">Login to Comment</p>';
-          }
-          else if (isset($_SESSION['id'])) {
-            echo '<p class="login-status">You are logged in!</p>';
-          }
 
 
 
 
-        if (!isset($_SESSION['id'])) {
-          echo '<form action="includes/login.inc.php" method="POST">
-            <input type="text" name="emailUser" placeholder="E-mail/Username">
-            <input type="password" name="pwd" placeholder="Password">
-            <button type="submit" name="login-submit">Login</button>
-          </form>
-          <a href="signup.php">Signup</a>';
-        }
-        else if (isset($_SESSION['id'])) {
-          echo '<form action="includes/logout.inc.php" method="POST">
-            <button type="submit" name="login-submit">Logout</button>
-          </form>';
-        }
-          ?>
-        </section>
-      </div>
-    </main>
 
-
-    
     
 <!-- Blog entry -->
   
@@ -70,34 +40,59 @@
     in a closet. The effort to continue the tradition seems sometimes useless, however, there are many young people who take pride in their roots.</p>
     <p>There are several styles of Huipiles. In the past different styles signified different social class. There are Huipiles that are unique for ceremonies or certain social events 
     such as a funeral. Our society is evolving rapidly and as in the past many traditions will be lost, it would be really sad to see such an ancient tradition extinct.</p>
-    <br /><b></b>
+    <br><b></b>
     <p>For more information follow the links below:</p>
     <a href="https://uknowledge.uky.edu/world_mexico_huipiles/">Indigenous Clothing--Huipiles </a>
     <br />
     <a href="https://samnoblemuseum.ou.edu/collections-and-research/ethnology/mayan-textiles/pitzer-collection-of-mayan-textiles/regional-variation-in-huipils/">Variation in Huipils </a>
     <!-- end of Blog-->    
      
-   <br />
-   <br />
+   <br>
+   <br>
    <div class="button">
      <button  type="button" onclick="alert" >Like</button>
-     <br /><br />
+     <br><br>
    </div>
    
    
       <div class="wrapper-main">
       <section class="section-default">
 
-   
-     
-<!--comment section-->
+
+    <div>
+        <section class="section-default">
+
+            <?php
+            if (!isset($_SESSION['id'])) {
+                echo '<form action="includes/login.php" method="post">
+            <input type="text" name="mailuid" placeholder="E-mail/Username">
+            <input type="password" name="pwd" placeholder="Password"><br><br>
+            <button type="submit" name="login-submit">Login</button><br>
+          </form>
+          <a href="signup.php"><button type="button" class="button">Sign Up</a>';
+            }
+            else if (isset($_SESSION['id'])) {
+                echo '<form action="includes/logout.php" method="post">
+            <button type="submit" name="login-submit">Logout</button>
+          </form>';
+            }
+            ?>
+        </section>
+    </div>
+
+
+    <!--comment section-->
 <?php
-echo "<form method='POST' action='".setComments($conn)."'>
-        <input type='hidden' name='user'>
-        <input type='hidden' name='posted' value='".date('Y-m-d H:i:s')."'>
+if(isset($_SESSION['id'])) {
+    echo "<form method='POST' action='" . setComments($conn) . "'>
+        <input type='hidden' name='uidUsers' value='".$_SESSION['id']."'>
+        <input type='hidden' name='posted' value='" . date('Y-m-d H:i:s') . "'>
         Comments: <textarea rows = '5' cols = '15' name='body'></textarea><br><br>
         <button name='commentSubmit' type='submit'>Comment</button>
         </form>";
+}else {
+    echo "Log in to comment!";
+}
  getComments($conn);
 
 

@@ -2,10 +2,10 @@
 
 function setComments($conn) {
     if (isset($_POST['commentSubmit'])){
-        $user_id = $_POST['user_id'];
-        $body = $_POST['body'];
+        $user_id = $_POST['uidUsers'];
         $posted = $_POST['posted'];
-        $sql = "INSERT INTO comments (user_id, posted, body) VALUES ('$user_id', '$posted', '$body')";
+        $body = $_POST['body'];
+        $sql = "INSERT INTO comments (uidUsers, posted, body) VALUES ('$user_id', '$posted', '$body')";
         $result = mysqli_query($conn, $sql);
     }
     
@@ -15,19 +15,28 @@ function getComments($conn) {
     $sql = "SELECT * FROM comments";
     $result = mysqli_query($conn, $sql);
     while ($row = $result->fetch_assoc()){
-        echo "<div class='comment-box'><p>";
-        echo $row['user_id']."<br>";
-        echo $row['posted']."<br>";
-        echo nl2br($row['body']);
-        echo "</p></div>";
+        $id = $row['uidUsers'];
+        $sql2 ="SELECT * FROM users WHERE id='$id'";
+        $result2 = mysqli_query($conn, $sql2);
+        if($row2 = $result2->fetch_assoc()){
+            echo "<div class='comment-box'><p>";
+            echo $row2['uidUsers'] . "<br>";
+            echo $row['posted'] . "<br>";
+            echo nl2br($row['body']);
+            echo "</p></div>";
+
+
+        }
+
     
     }
+
 }
 
 function editComments($conn) {
     if (isset($_POST['commentSubmit'])){
         $cid = $_POST['id'];
-        $user_id = $_POST['user_id'];
+        $user_id = $_POST['uidUsers'];
         $date = $_POST['date'];
         $comment = $_POST['body'];
         
@@ -59,7 +68,7 @@ function setContact($conn)
 
 function getLogin($conn) {
     if(isset($_POST['loginSubmit'])){
-        $user_id = $_POST['user_id'];
+        $user_id = $_POST['uidUsers'];
         $pwd = $_POST['password'];
 
         $sql = "SELECT * FROM users WHERE user_id='$user_id' AND password='$pwd'";
